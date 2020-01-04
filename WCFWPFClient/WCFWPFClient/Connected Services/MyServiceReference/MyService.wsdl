@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MyService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:57079/MyService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:57079/MyService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFService.Faults" />
+      <xsd:import schemaLocation="http://localhost:57079/MyService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:57079/MyService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WCFService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMyService_Register_InputMessage">
+    <wsdl:part name="parameters" element="tns:Register" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_Register_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_Register_UsernameReservedFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q1:UsernameReservedFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_Login_InvalidLoginFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q2:InvalidLoginFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_Logout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_Logout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_Logout_InvalidLogoutFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q3:InvalidLogoutFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:Add" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_Add_IncorrectDataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q4:IncorrectDataFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_Delete_IncorrectDataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q5:IncorrectDataFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_GetUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_GetUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_GetUser_UnsuccesfullSearchFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q6:UnsuccesfullSearchFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_GetAllUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUser" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_GetAllUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_GetAllUser_UnsuccesfullSearchFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q7:UnsuccesfullSearchFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_GetCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCar" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_GetCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_GetCar_UnsuccesfullSearchFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q8:UnsuccesfullSearchFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_GetCarList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarList" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_GetCarList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_GetCarList_UnsuccesfullSearchFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q9:UnsuccesfullSearchFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_ChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_ChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_ChangePassword_IncorrectDataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q10:IncorrectDataFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_Update_IncorrectDataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q11:IncorrectDataFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_FindCarByLicensePlateNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindCarByLicensePlateNumber" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_FindCarByLicensePlateNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindCarByLicensePlateNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_FindCarByLicensePlateNumber_UnsuccesfullSearchFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q12:UnsuccesfullSearchFault" />
+  </wsdl:message>
+  <wsdl:portType name="IMyService">
+    <wsdl:operation name="Register">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyService/Register" message="tns:IMyService_Register_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyService/RegisterResponse" message="tns:IMyService_Register_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyService/RegisterUsernameReservedFaultFault" name="UsernameReservedFaultFault" message="tns:IMyService_Register_UsernameReservedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyService/Login" message="tns:IMyService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyService/LoginResponse" message="tns:IMyService_Login_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyService/LoginInvalidLoginFaultFault" name="InvalidLoginFaultFault" message="tns:IMyService_Login_InvalidLoginFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyService/Logout" message="tns:IMyService_Logout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyService/LogoutResponse" message="tns:IMyService_Logout_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyService/LogoutInvalidLogoutFaultFault" name="InvalidLogoutFaultFault" message="tns:IMyService_Logout_InvalidLogoutFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyService/Add" message="tns:IMyService_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyService/AddResponse" message="tns:IMyService_Add_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyService/AddIncorrectDataFaultFault" name="IncorrectDataFaultFault" message="tns:IMyService_Add_IncorrectDataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyService/Delete" message="tns:IMyService_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyService/DeleteResponse" message="tns:IMyService_Delete_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyService/DeleteIncorrectDataFaultFault" name="IncorrectDataFaultFault" message="tns:IMyService_Delete_IncorrectDataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyService/GetUser" message="tns:IMyService_GetUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyService/GetUserResponse" message="tns:IMyService_GetUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyService/GetUserUnsuccesfullSearchFaultFault" name="UnsuccesfullSearchFaultFault" message="tns:IMyService_GetUser_UnsuccesfullSearchFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyService/GetAllUser" message="tns:IMyService_GetAllUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyService/GetAllUserResponse" message="tns:IMyService_GetAllUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyService/GetAllUserUnsuccesfullSearchFaultFault" name="UnsuccesfullSearchFaultFault" message="tns:IMyService_GetAllUser_UnsuccesfullSearchFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyService/GetCar" message="tns:IMyService_GetCar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyService/GetCarResponse" message="tns:IMyService_GetCar_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyService/GetCarUnsuccesfullSearchFaultFault" name="UnsuccesfullSearchFaultFault" message="tns:IMyService_GetCar_UnsuccesfullSearchFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyService/GetCarList" message="tns:IMyService_GetCarList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyService/GetCarListResponse" message="tns:IMyService_GetCarList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyService/GetCarListUnsuccesfullSearchFaultFault" name="UnsuccesfullSearchFaultFault" message="tns:IMyService_GetCarList_UnsuccesfullSearchFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyService/ChangePassword" message="tns:IMyService_ChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyService/ChangePasswordResponse" message="tns:IMyService_ChangePassword_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyService/ChangePasswordIncorrectDataFaultFault" name="IncorrectDataFaultFault" message="tns:IMyService_ChangePassword_IncorrectDataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyService/Update" message="tns:IMyService_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyService/UpdateResponse" message="tns:IMyService_Update_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyService/UpdateIncorrectDataFaultFault" name="IncorrectDataFaultFault" message="tns:IMyService_Update_IncorrectDataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindCarByLicensePlateNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyService/FindCarByLicensePlateNumber" message="tns:IMyService_FindCarByLicensePlateNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyService/FindCarByLicensePlateNumberResponse" message="tns:IMyService_FindCarByLicensePlateNumber_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyService/FindCarByLicensePlateNumberUnsuccesfullSearchFaultFault" name="UnsuccesfullSearchFaultFault" message="tns:IMyService_FindCarByLicensePlateNumber_UnsuccesfullSearchFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IMyService" type="tns:IMyService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Register">
+      <soap:operation soapAction="http://tempuri.org/IMyService/Register" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UsernameReservedFaultFault">
+        <soap:fault use="literal" name="UsernameReservedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IMyService/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidLoginFaultFault">
+        <soap:fault use="literal" name="InvalidLoginFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap:operation soapAction="http://tempuri.org/IMyService/Logout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidLogoutFaultFault">
+        <soap:fault use="literal" name="InvalidLogoutFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <soap:operation soapAction="http://tempuri.org/IMyService/Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IncorrectDataFaultFault">
+        <soap:fault use="literal" name="IncorrectDataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/IMyService/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IncorrectDataFaultFault">
+        <soap:fault use="literal" name="IncorrectDataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <soap:operation soapAction="http://tempuri.org/IMyService/GetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UnsuccesfullSearchFaultFault">
+        <soap:fault use="literal" name="UnsuccesfullSearchFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUser">
+      <soap:operation soapAction="http://tempuri.org/IMyService/GetAllUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UnsuccesfullSearchFaultFault">
+        <soap:fault use="literal" name="UnsuccesfullSearchFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCar">
+      <soap:operation soapAction="http://tempuri.org/IMyService/GetCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UnsuccesfullSearchFaultFault">
+        <soap:fault use="literal" name="UnsuccesfullSearchFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarList">
+      <soap:operation soapAction="http://tempuri.org/IMyService/GetCarList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UnsuccesfullSearchFaultFault">
+        <soap:fault use="literal" name="UnsuccesfullSearchFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://tempuri.org/IMyService/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IncorrectDataFaultFault">
+        <soap:fault use="literal" name="IncorrectDataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="http://tempuri.org/IMyService/Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IncorrectDataFaultFault">
+        <soap:fault use="literal" name="IncorrectDataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindCarByLicensePlateNumber">
+      <soap:operation soapAction="http://tempuri.org/IMyService/FindCarByLicensePlateNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UnsuccesfullSearchFaultFault">
+        <soap:fault use="literal" name="UnsuccesfullSearchFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MyService">
+    <wsdl:port name="BasicHttpBinding_IMyService" binding="tns:BasicHttpBinding_IMyService">
+      <soap:address location="http://localhost:57079/MyService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

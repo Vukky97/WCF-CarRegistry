@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCFService.Faults" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFService.Faults" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="UsernameReservedFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UsernameReservedFault" nillable="true" type="tns:UsernameReservedFault" />
+  <xs:complexType name="InvalidLoginFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvalidLoginFault" nillable="true" type="tns:InvalidLoginFault" />
+  <xs:complexType name="InvalidLogoutFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvalidLogoutFault" nillable="true" type="tns:InvalidLogoutFault" />
+  <xs:complexType name="IncorrectDataFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IncorrectDataFault" nillable="true" type="tns:IncorrectDataFault" />
+  <xs:complexType name="UnsuccesfullSearchFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Uid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UnsuccesfullSearchFault" nillable="true" type="tns:UnsuccesfullSearchFault" />
+</xs:schema>

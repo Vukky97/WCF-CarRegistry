@@ -1,0 +1,16 @@
+﻿<Window x:Class="WCFWPFClient.StartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WCFWPFClient"
+        mc:Ignorable="d"
+        Title="StartWindow" Height="450" Width="800">
+    <Grid Background="OrangeRed">
+        <Label Content="Welcome in Car Registry" HorizontalAlignment="Left" Margin="146,77,0,0" VerticalAlignment="Top" FontSize="40" FontStyle="Italic" FontWeight="Bold"/>
+        <Button x:Name="Login" Content="Login" Background="AliceBlue" HorizontalAlignment="Left" Margin="480,238,0,0" VerticalAlignment="Top" Width="173" FontSize="30" FontStyle="Italic" FontWeight="Bold" Height="77" Click="Login_Click"/>
+        <Button x:Name="Register" Content="Register" Background="AliceBlue" HorizontalAlignment="Left" Margin="157,233,0,0" VerticalAlignment="Top" Width="179" FontSize="30" FontStyle="Italic" FontWeight="Bold" Height="82" Click="Register_Click"/>
+
+    </Grid>
+
+</Window>
