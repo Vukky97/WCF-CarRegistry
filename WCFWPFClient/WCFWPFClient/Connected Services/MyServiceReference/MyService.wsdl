@@ -26,6 +26,15 @@
   <wsdl:message name="IMyService_Login_InvalidLoginFaultFault_FaultMessage">
     <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q2:InvalidLoginFault" />
   </wsdl:message>
+  <wsdl:message name="IMyService_IsAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_IsAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_IsAdmin_InvalidLoginFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q3:InvalidLoginFault" />
+  </wsdl:message>
   <wsdl:message name="IMyService_Logout_InputMessage">
     <wsdl:part name="parameters" element="tns:Logout" />
   </wsdl:message>
@@ -33,7 +42,7 @@
     <wsdl:part name="parameters" element="tns:LogoutResponse" />
   </wsdl:message>
   <wsdl:message name="IMyService_Logout_InvalidLogoutFaultFault_FaultMessage">
-    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q3:InvalidLogoutFault" />
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q4:InvalidLogoutFault" />
   </wsdl:message>
   <wsdl:message name="IMyService_Add_InputMessage">
     <wsdl:part name="parameters" element="tns:Add" />
@@ -42,16 +51,25 @@
     <wsdl:part name="parameters" element="tns:AddResponse" />
   </wsdl:message>
   <wsdl:message name="IMyService_Add_IncorrectDataFaultFault_FaultMessage">
-    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q4:IncorrectDataFault" />
-  </wsdl:message>
-  <wsdl:message name="IMyService_Delete_InputMessage">
-    <wsdl:part name="parameters" element="tns:Delete" />
-  </wsdl:message>
-  <wsdl:message name="IMyService_Delete_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMyService_Delete_IncorrectDataFaultFault_FaultMessage">
     <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q5:IncorrectDataFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_DeleteCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCar" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_DeleteCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_DeleteCar_IncorrectDataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q6:IncorrectDataFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_DeleteUser_IncorrectDataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q7:IncorrectDataFault" />
   </wsdl:message>
   <wsdl:message name="IMyService_GetUser_InputMessage">
     <wsdl:part name="parameters" element="tns:GetUser" />
@@ -60,7 +78,7 @@
     <wsdl:part name="parameters" element="tns:GetUserResponse" />
   </wsdl:message>
   <wsdl:message name="IMyService_GetUser_UnsuccesfullSearchFaultFault_FaultMessage">
-    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q6:UnsuccesfullSearchFault" />
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q8:UnsuccesfullSearchFault" />
   </wsdl:message>
   <wsdl:message name="IMyService_GetAllUser_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllUser" />
@@ -69,7 +87,7 @@
     <wsdl:part name="parameters" element="tns:GetAllUserResponse" />
   </wsdl:message>
   <wsdl:message name="IMyService_GetAllUser_UnsuccesfullSearchFaultFault_FaultMessage">
-    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q7:UnsuccesfullSearchFault" />
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q9:UnsuccesfullSearchFault" />
   </wsdl:message>
   <wsdl:message name="IMyService_GetCar_InputMessage">
     <wsdl:part name="parameters" element="tns:GetCar" />
@@ -78,7 +96,7 @@
     <wsdl:part name="parameters" element="tns:GetCarResponse" />
   </wsdl:message>
   <wsdl:message name="IMyService_GetCar_UnsuccesfullSearchFaultFault_FaultMessage">
-    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q8:UnsuccesfullSearchFault" />
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q10:UnsuccesfullSearchFault" />
   </wsdl:message>
   <wsdl:message name="IMyService_GetCarList_InputMessage">
     <wsdl:part name="parameters" element="tns:GetCarList" />
@@ -87,7 +105,7 @@
     <wsdl:part name="parameters" element="tns:GetCarListResponse" />
   </wsdl:message>
   <wsdl:message name="IMyService_GetCarList_UnsuccesfullSearchFaultFault_FaultMessage">
-    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q9:UnsuccesfullSearchFault" />
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q11:UnsuccesfullSearchFault" />
   </wsdl:message>
   <wsdl:message name="IMyService_ChangePassword_InputMessage">
     <wsdl:part name="parameters" element="tns:ChangePassword" />
@@ -96,7 +114,7 @@
     <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
   </wsdl:message>
   <wsdl:message name="IMyService_ChangePassword_IncorrectDataFaultFault_FaultMessage">
-    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q10:IncorrectDataFault" />
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q12:IncorrectDataFault" />
   </wsdl:message>
   <wsdl:message name="IMyService_Update_InputMessage">
     <wsdl:part name="parameters" element="tns:Update" />
@@ -105,7 +123,7 @@
     <wsdl:part name="parameters" element="tns:UpdateResponse" />
   </wsdl:message>
   <wsdl:message name="IMyService_Update_IncorrectDataFaultFault_FaultMessage">
-    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q11:IncorrectDataFault" />
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q13:IncorrectDataFault" />
   </wsdl:message>
   <wsdl:message name="IMyService_FindCarByLicensePlateNumber_InputMessage">
     <wsdl:part name="parameters" element="tns:FindCarByLicensePlateNumber" />
@@ -114,7 +132,7 @@
     <wsdl:part name="parameters" element="tns:FindCarByLicensePlateNumberResponse" />
   </wsdl:message>
   <wsdl:message name="IMyService_FindCarByLicensePlateNumber_UnsuccesfullSearchFaultFault_FaultMessage">
-    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q12:UnsuccesfullSearchFault" />
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/WCFService.Faults" name="detail" element="q14:UnsuccesfullSearchFault" />
   </wsdl:message>
   <wsdl:portType name="IMyService">
     <wsdl:operation name="Register">
@@ -127,6 +145,11 @@
       <wsdl:output wsaw:Action="http://tempuri.org/IMyService/LoginResponse" message="tns:IMyService_Login_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IMyService/LoginInvalidLoginFaultFault" name="InvalidLoginFaultFault" message="tns:IMyService_Login_InvalidLoginFaultFault_FaultMessage" />
     </wsdl:operation>
+    <wsdl:operation name="IsAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyService/IsAdmin" message="tns:IMyService_IsAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyService/IsAdminResponse" message="tns:IMyService_IsAdmin_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyService/IsAdminInvalidLoginFaultFault" name="InvalidLoginFaultFault" message="tns:IMyService_IsAdmin_InvalidLoginFaultFault_FaultMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Logout">
       <wsdl:input wsaw:Action="http://tempuri.org/IMyService/Logout" message="tns:IMyService_Logout_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMyService/LogoutResponse" message="tns:IMyService_Logout_OutputMessage" />
@@ -137,10 +160,15 @@
       <wsdl:output wsaw:Action="http://tempuri.org/IMyService/AddResponse" message="tns:IMyService_Add_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IMyService/AddIncorrectDataFaultFault" name="IncorrectDataFaultFault" message="tns:IMyService_Add_IncorrectDataFaultFault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Delete">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMyService/Delete" message="tns:IMyService_Delete_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMyService/DeleteResponse" message="tns:IMyService_Delete_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://tempuri.org/IMyService/DeleteIncorrectDataFaultFault" name="IncorrectDataFaultFault" message="tns:IMyService_Delete_IncorrectDataFaultFault_FaultMessage" />
+    <wsdl:operation name="DeleteCar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyService/DeleteCar" message="tns:IMyService_DeleteCar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyService/DeleteCarResponse" message="tns:IMyService_DeleteCar_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyService/DeleteCarIncorrectDataFaultFault" name="IncorrectDataFaultFault" message="tns:IMyService_DeleteCar_IncorrectDataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyService/DeleteUser" message="tns:IMyService_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyService/DeleteUserResponse" message="tns:IMyService_DeleteUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyService/DeleteUserIncorrectDataFaultFault" name="IncorrectDataFaultFault" message="tns:IMyService_DeleteUser_IncorrectDataFaultFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IMyService/GetUser" message="tns:IMyService_GetUser_InputMessage" />
@@ -204,6 +232,18 @@
         <soap:fault use="literal" name="InvalidLoginFaultFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="IsAdmin">
+      <soap:operation soapAction="http://tempuri.org/IMyService/IsAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidLoginFaultFault">
+        <soap:fault use="literal" name="InvalidLoginFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
     <wsdl:operation name="Logout">
       <soap:operation soapAction="http://tempuri.org/IMyService/Logout" style="document" />
       <wsdl:input>
@@ -228,8 +268,20 @@
         <soap:fault use="literal" name="IncorrectDataFaultFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
-    <wsdl:operation name="Delete">
-      <soap:operation soapAction="http://tempuri.org/IMyService/Delete" style="document" />
+    <wsdl:operation name="DeleteCar">
+      <soap:operation soapAction="http://tempuri.org/IMyService/DeleteCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IncorrectDataFaultFault">
+        <soap:fault use="literal" name="IncorrectDataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/IMyService/DeleteUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

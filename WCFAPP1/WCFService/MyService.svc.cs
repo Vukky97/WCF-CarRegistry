@@ -7,8 +7,6 @@ using System.Text;
 
 namespace WCFService
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "MyService" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select MyService.svc or MyService.svc.cs at the Solution Explorer and start debugging.
     public class MyService : IMyService
     {
         // clienteknek wsdl cím: http://localhost:57079/MyService.svc?wsdl
@@ -16,6 +14,7 @@ namespace WCFService
         private MyDatabaseEntities mde = new MyDatabaseEntities();
 
         Dictionary<string, string> loggedInUsers = new Dictionary<string, string>();
+        Dictionary<string, string> loggedInAdmins = new Dictionary<string, string>();
 
         public bool Login(string username, string password)
         {
@@ -46,13 +45,40 @@ namespace WCFService
             }
         }
 
-        public bool IsAdmin(string adminName)
+        public bool IsAdmin(string adminName, string password)
         {
-            
+            try
+            {
+                //Admins admin = mde.Admins.Find(adminName);
+                Admins adminEntity = mde.Admins.FirstOrDefault(p => p.AdminName == adminName);
+                if (adminEntity != null && !loggedInAdmins.ContainsKey(adminName))
+                {
+                    if (adminEntity.Password == password)
+                    {
+                        string sessionId = Guid.NewGuid().ToString();
+                        loggedInAdmins.Add(adminName, sessionId);
+
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                return false;
+
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.GetType());
+                Console.WriteLine("Login Fault as Admin : " + exception.Message);
+                return false;
+            }
         }
 
         public void Logout(string username)
         {
+            // TODO: adminoknak is ki kell tudni logolniuk
             try
             {
                 loggedInUsers.Remove(username);
@@ -89,7 +115,7 @@ namespace WCFService
             catch (Exception exception)
             {
                 Console.WriteLine(exception.GetType());
-                Console.WriteLine("(Login)Fault! : " + exception.Message);
+                Console.WriteLine("Login Fault : " + exception.Message);
                 return false;
             }
         }
@@ -122,7 +148,7 @@ namespace WCFService
             catch (Exception exception)
             {
                 Console.WriteLine(exception.GetType());
-                Console.WriteLine("(GetUser)Fault! : " + exception.Message);
+                Console.WriteLine("GetUser Fault : " + exception.Message);
             }
         }
 
@@ -148,12 +174,12 @@ namespace WCFService
             catch (Exception exception)
             {
                 Console.WriteLine(exception.GetType());
-                Console.WriteLine("(GetUser)Fault! : " + exception.Message);
+                Console.WriteLine("GetUser Fault : " + exception.Message);
                 return false;
             }
         }
 
-        public void Delete(int id)
+        public void DeleteCar(int id)
         {
             try
             {
@@ -167,10 +193,29 @@ namespace WCFService
             catch (Exception exception)
             {
                 Console.WriteLine(exception.GetType());
-                Console.WriteLine("(Delete)Fault! : " + exception.Message);
+                Console.WriteLine(" Delete Fault : " + exception.Message);
             }
         }
 
+        public void DeleteUser(int id)
+        {
+            try
+            {
+                lock (mde.Users)
+                {
+                    var userToDelete = mde.Users.FirstOrDefault(p => p.Id == id);
+                    mde.Users.Remove(userToDelete);
+                    mde.SaveChanges();
+                }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.GetType());
+                Console.WriteLine("Delete Fault : " + exception.Message);
+            }
+        }
+
+        //NOTE: doesn't implemented
         public CarRegistry FindCarByLicensePlateNumber(string licensePlateNumber)
         {
             try
@@ -180,7 +225,7 @@ namespace WCFService
             catch (Exception exception)
             {
                 Console.WriteLine(exception.GetType());
-                Console.WriteLine("(GetCar)Fault! : " + exception.Message);
+                Console.WriteLine("GetCar Fault : " + exception.Message);
                 return null;
             }
         }
@@ -194,7 +239,7 @@ namespace WCFService
             catch (Exception exception)
             {
                 Console.WriteLine(exception.GetType());
-                Console.WriteLine("(GetAllUser)Fault! : " + exception.Message);
+                Console.WriteLine("GetAllUser Fault : " + exception.Message);
                 return null;
             }
         }
@@ -208,7 +253,7 @@ namespace WCFService
             catch (Exception exception)
             {
                 Console.WriteLine(exception.GetType());
-                Console.WriteLine("(GetCar)Fault! : " + exception.Message);
+                Console.WriteLine("GetCar Fault : " + exception.Message);
                 return null;
             }
         }
@@ -222,7 +267,7 @@ namespace WCFService
             catch (Exception exception)
             {
                 Console.WriteLine(exception.GetType());
-                Console.WriteLine("(GetCarlist)Fault! : " + exception.Message);
+                Console.WriteLine("GetCarlist Fault : " + exception.Message);
                 return null;
             }
         }
@@ -236,12 +281,10 @@ namespace WCFService
             catch (Exception exception)
             {
                 Console.WriteLine(exception.GetType());
-                Console.WriteLine("(GetUser)Fault! : " + exception.Message);
+                Console.WriteLine("GetUser Fault : " + exception.Message);
                 return null;
             }
         }
-
-
 
         public void Update(int id, string brand, string model, int productionYear, string engine, string transmission, string condition, int distanceTraveled, int price, string licensePlateNumber, string location, string phoneNumber)
         {
@@ -271,8 +314,9 @@ namespace WCFService
             catch (Exception exception)
             {
                 Console.WriteLine(exception.GetType());
-                Console.WriteLine("(Login)Fault! : " + exception.Message);
+                Console.WriteLine("Login Fault : " + exception.Message);
             }
         }
+
     }
 }

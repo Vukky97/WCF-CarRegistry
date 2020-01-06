@@ -570,6 +570,13 @@ namespace WCFWPFClient.MyServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/Login", ReplyAction="http://tempuri.org/IMyService/LoginResponse")]
         System.Threading.Tasks.Task<bool> LoginAsync(string username, string password);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/IsAdmin", ReplyAction="http://tempuri.org/IMyService/IsAdminResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(WCFWPFClient.MyServiceReference.InvalidLoginFault), Action="http://tempuri.org/IMyService/IsAdminInvalidLoginFaultFault", Name="InvalidLoginFault", Namespace="http://schemas.datacontract.org/2004/07/WCFService.Faults")]
+        bool IsAdmin(string adminName, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/IsAdmin", ReplyAction="http://tempuri.org/IMyService/IsAdminResponse")]
+        System.Threading.Tasks.Task<bool> IsAdminAsync(string adminName, string password);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/Logout", ReplyAction="http://tempuri.org/IMyService/LogoutResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(WCFWPFClient.MyServiceReference.InvalidLogoutFault), Action="http://tempuri.org/IMyService/LogoutInvalidLogoutFaultFault", Name="InvalidLogoutFault", Namespace="http://schemas.datacontract.org/2004/07/WCFService.Faults")]
         void Logout(string username);
@@ -584,12 +591,19 @@ namespace WCFWPFClient.MyServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/Add", ReplyAction="http://tempuri.org/IMyService/AddResponse")]
         System.Threading.Tasks.Task AddAsync(string brand, string model, int productionYear, string engine, string transmission, string condition, int distanceTraveled, int price, string licensePlateNumber, string location, string phoneNumber);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/Delete", ReplyAction="http://tempuri.org/IMyService/DeleteResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(WCFWPFClient.MyServiceReference.IncorrectDataFault), Action="http://tempuri.org/IMyService/DeleteIncorrectDataFaultFault", Name="IncorrectDataFault", Namespace="http://schemas.datacontract.org/2004/07/WCFService.Faults")]
-        void Delete(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/DeleteCar", ReplyAction="http://tempuri.org/IMyService/DeleteCarResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(WCFWPFClient.MyServiceReference.IncorrectDataFault), Action="http://tempuri.org/IMyService/DeleteCarIncorrectDataFaultFault", Name="IncorrectDataFault", Namespace="http://schemas.datacontract.org/2004/07/WCFService.Faults")]
+        void DeleteCar(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/Delete", ReplyAction="http://tempuri.org/IMyService/DeleteResponse")]
-        System.Threading.Tasks.Task DeleteAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/DeleteCar", ReplyAction="http://tempuri.org/IMyService/DeleteCarResponse")]
+        System.Threading.Tasks.Task DeleteCarAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/DeleteUser", ReplyAction="http://tempuri.org/IMyService/DeleteUserResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(WCFWPFClient.MyServiceReference.IncorrectDataFault), Action="http://tempuri.org/IMyService/DeleteUserIncorrectDataFaultFault", Name="IncorrectDataFault", Namespace="http://schemas.datacontract.org/2004/07/WCFService.Faults")]
+        void DeleteUser(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/DeleteUser", ReplyAction="http://tempuri.org/IMyService/DeleteUserResponse")]
+        System.Threading.Tasks.Task DeleteUserAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetUser", ReplyAction="http://tempuri.org/IMyService/GetUserResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(WCFWPFClient.MyServiceReference.UnsuccesfullSearchFault), Action="http://tempuri.org/IMyService/GetUserUnsuccesfullSearchFaultFault", Name="UnsuccesfullSearchFault", Namespace="http://schemas.datacontract.org/2004/07/WCFService.Faults")]
@@ -685,6 +699,14 @@ namespace WCFWPFClient.MyServiceReference {
             return base.Channel.LoginAsync(username, password);
         }
         
+        public bool IsAdmin(string adminName, string password) {
+            return base.Channel.IsAdmin(adminName, password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> IsAdminAsync(string adminName, string password) {
+            return base.Channel.IsAdminAsync(adminName, password);
+        }
+        
         public void Logout(string username) {
             base.Channel.Logout(username);
         }
@@ -701,12 +723,20 @@ namespace WCFWPFClient.MyServiceReference {
             return base.Channel.AddAsync(brand, model, productionYear, engine, transmission, condition, distanceTraveled, price, licensePlateNumber, location, phoneNumber);
         }
         
-        public void Delete(int id) {
-            base.Channel.Delete(id);
+        public void DeleteCar(int id) {
+            base.Channel.DeleteCar(id);
         }
         
-        public System.Threading.Tasks.Task DeleteAsync(int id) {
-            return base.Channel.DeleteAsync(id);
+        public System.Threading.Tasks.Task DeleteCarAsync(int id) {
+            return base.Channel.DeleteCarAsync(id);
+        }
+        
+        public void DeleteUser(int id) {
+            base.Channel.DeleteUser(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteUserAsync(int id) {
+            return base.Channel.DeleteUserAsync(id);
         }
         
         public WCFWPFClient.MyServiceReference.Users GetUser(string username) {

@@ -25,6 +25,7 @@ namespace WCFService
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Admins> Admins { get; set; }
         public virtual DbSet<CarRegistry> CarRegistry { get; set; }
         public virtual DbSet<Users> Users { get; set; }
     }

@@ -40,3 +40,5 @@ D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\
 D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\WCFWPFClient\obj\Debug\WCFWPFClient.csproj.CoreCompileInputs.cache
 D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\WCFWPFClient\obj\Debug\WCFWPFClient.exe
 D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\WCFWPFClient\obj\Debug\WCFWPFClient.pdb
+D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\WCFWPFClient\obj\Debug\AdminWindow.g.cs
+D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\WCFWPFClient\obj\Debug\AdminWindow.baml

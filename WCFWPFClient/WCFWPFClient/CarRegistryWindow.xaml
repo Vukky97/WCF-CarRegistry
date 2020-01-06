@@ -37,10 +37,10 @@
         <TextBox x:Name="TBTransmission" HorizontalAlignment="Left" Height="28" Margin="191,279,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="18" />
         <TextBox x:Name="TBCondition" HorizontalAlignment="Left" Height="28" Margin="191,325,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="18" />
         <TextBox x:Name="TBDistanceTraveled" HorizontalAlignment="Left" Height="28" Margin="567,96,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" FontSize="18" />
-        <TextBox x:Name="TBPrice" HorizontalAlignment="Left" Height="28" Margin="562,138,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="18" />
+        <TextBox x:Name="TBPrice" HorizontalAlignment="Left" Height="28" Margin="567,139,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="18" />
         <TextBox x:Name="TBLicensePlateNumber" HorizontalAlignment="Left" Height="28" Margin="567,192,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="18" />
-        <TextBox x:Name="TBLocation" HorizontalAlignment="Left" Height="28" Margin="562,244,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="18" />
-        <TextBox x:Name="TBPhoneNumber" HorizontalAlignment="Left" Height="28" Margin="562,293,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="18" />
+        <TextBox x:Name="TBLocation" HorizontalAlignment="Left" Height="28" Margin="567,244,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="18" />
+        <TextBox x:Name="TBPhoneNumber" HorizontalAlignment="Left" Height="28" Margin="567,294,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="18" />
         <TextBox x:Name="TBID" HorizontalAlignment="Left" Height="28" Margin="980,279,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="18" />
         <Button x:Name="BTNAdd" FontStyle="Italic" FontWeight="Bold" Background="OrangeRed" FontSize="18" Content="Add" HorizontalAlignment="Left" Margin="798,83,0,0" VerticalAlignment="Top" Width="120" Click="BTNAdd_Click" />
         <Button x:Name="BTNReset" FontStyle="Italic" FontWeight="Bold" Background="OrangeRed" FontSize="18" Content="Reset" HorizontalAlignment="Left" Margin="798,125,0,0" VerticalAlignment="Top" Width="120" Click="BTNReset_Click"/>
@@ -49,7 +49,9 @@
         <Button x:Name="BTNRefresh" FontStyle="Italic" FontWeight="Bold" Background="OrangeRed" FontSize="18" Content="Refresh" HorizontalAlignment="Left" Margin="798,171,0,0" VerticalAlignment="Top" Width="120" Click="BTNRefresh_Click" />
         <Button x:Name="BTNChange" FontStyle="Italic" FontWeight="Bold" Background="OrangeRed" FontSize="18" Content="Change" HorizontalAlignment="Left" Margin="798,210,0,0" VerticalAlignment="Top" Width="120" Click="BTNChange_Click" />
         <Button x:Name="BTNLogOut" FontStyle="Italic" FontWeight="Bold" Background="OrangeRed" FontSize="18" Content="LogOut" HorizontalAlignment="Left" Margin="1062,345,0,0" VerticalAlignment="Top" Width="120" Click="BTNLogOut_Click" />
+        <Button x:Name="BTNAdminPanel" FontStyle="Italic" FontWeight="Bold" Background="Red" FontSize="18" Content="Admin Panel" HorizontalAlignment="Left" Margin="980,83,0,0" VerticalAlignment="Top" Width="120" Click="BTNAdminPanel_Click" />
         <Label Content="ID TextBox: " FontSize="20" FontStyle="Italic" FontWeight="Bold" HorizontalAlignment="Left" Margin="980,235,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LBLName" Content="" FontSize="30" FontStyle="Italic" FontWeight="Bold"  HorizontalAlignment="Left" Margin="173,10,0,0" VerticalAlignment="Top" />
 
     </Grid>
 </Window>

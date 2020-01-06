@@ -24,6 +24,10 @@ namespace WCFService
         bool Login(string username, string password);
 
         [OperationContract]
+        [FaultContract(typeof(InvalidLoginFault))]
+        bool IsAdmin(string adminName, string password);
+
+        [OperationContract]
         [FaultContract(typeof(InvalidLogoutFault))]
         void Logout(string username);
 
@@ -34,7 +38,11 @@ namespace WCFService
 
         [OperationContract]
         [FaultContract(typeof(IncorrectDataFault))]
-        void Delete(int id);
+        void DeleteCar(int id);
+
+        [OperationContract]
+        [FaultContract(typeof(IncorrectDataFault))]
+        void DeleteUser(int id);
 
         [OperationContract]
         [FaultContract(typeof(UnsuccesfullSearchFault))]

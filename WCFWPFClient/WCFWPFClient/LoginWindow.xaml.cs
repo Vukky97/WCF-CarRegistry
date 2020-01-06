@@ -24,7 +24,7 @@ namespace WCFWPFClient
         }
 
         private static MyServiceClient msc = new MyServiceClient();
-        private static bool loggedIn = false;
+        private static bool isAdmin = false;
         private string userName;
 
         private void BTNBack_Click(object sender, RoutedEventArgs e)
@@ -40,11 +40,20 @@ namespace WCFWPFClient
             {
                 try
                 {
-                    if (msc.Login(TBUserName.Text, PBPassword.Password))
+                    if (msc.IsAdmin(TBUserName.Text, PBPassword.Password))
                     {
-                        loggedIn = true;
+                        isAdmin = true;
+                        MessageBox.Show("You are now logged in as Admin.");
+                        CarRegistryWindow crw = new CarRegistryWindow(userName, isAdmin);
+                        crw.Show();
+                        this.Close();
+                        //TODO: open adminWindow
+                    }
+                    else if (msc.Login(TBUserName.Text, PBPassword.Password))
+                    {
+                        isAdmin = false;
                         userName = TBUserName.Text;
-                        CarRegistryWindow crw = new CarRegistryWindow(userName);
+                        CarRegistryWindow crw = new CarRegistryWindow(userName, isAdmin);
                         crw.Show();
                         this.Close();
                         MessageBox.Show("Successful login!");

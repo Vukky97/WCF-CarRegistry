@@ -16,31 +16,45 @@ using WCFWPFClient.MyServiceReference;
 
 namespace WCFWPFClient
 {
-    /// <summary>
-    /// Interaction logic for CarRegistryWindow.xaml
-    /// </summary>
     public partial class CarRegistryWindow : Window
     {
-        public CarRegistryWindow(string name)
+        public CarRegistryWindow(string name, bool isAdmin)
         {
-            loggedInPersonName = name;
             InitializeComponent();
+            loggedInPersonName = name;
+            loggedInAsAdmin = isAdmin;
+            BTNDelete.IsEnabled = false;
+            LBLName.Content = name;
+            BTNAdminPanel.Visibility = Visibility.Hidden;
+            CheckAdmin();
         }
 
         private static string loggedInPersonName;
         private bool loggedInAsAdmin = false;
         MyServiceClient msc = new MyServiceClient();
 
+
         private void DataGrid_Loaded(object sender, RoutedEventArgs e)
         {
             Refresh();
+        }
+
+        private void CheckAdmin()
+        {
+            if (loggedInAsAdmin)
+            {
+                // TODO: enable delete car n change users pw, show a new adminpanel tab
+                BTNDelete.IsEnabled = true;
+                LBLName.Content = "Admin";
+                BTNAdminPanel.Visibility = Visibility.Visible;
+            }
         }
 
         private void Refresh()
         {
             try
             {
-                // Warning: bedore this that msc is refered like: LoginWindow.msc.GetCarList()
+                // Warning: before this that msc is refered like: LoginWindow.msc.GetCarList()
                 dataGrid.ItemsSource = msc.GetCarList().Select(carEntity => new
                 {
                     Id = carEntity.Id,
@@ -98,7 +112,7 @@ namespace WCFWPFClient
             }
             catch (Exception exception)
             {
-                MessageBox.Show("(Get CarEntity) Fault! : " + exception.ToString());
+                MessageBox.Show("Get CarEntity Fault! : " + exception.ToString());
             }
         }
 
@@ -124,7 +138,7 @@ namespace WCFWPFClient
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show("(Add Car to Registry) Fault! : " + exception.ToString());
+                    MessageBox.Show("Add Car to Registry Fault! : " + exception.ToString());
                 }
             }
             else
@@ -142,7 +156,7 @@ namespace WCFWPFClient
             {
                 try
                 {
-                    msc.Delete(int.Parse(TBID.Text));
+                    msc.DeleteCar(int.Parse(TBID.Text));
                     Refresh();
                 }
                 catch (FaultException<IncorrectDataFault>)
@@ -151,7 +165,7 @@ namespace WCFWPFClient
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show("(Delete Car) Fault! : " + exception.ToString());
+                    MessageBox.Show("Delete Car Fault : " + exception.ToString());
                 }
                 TBID.Text = "";
             }
@@ -199,7 +213,7 @@ namespace WCFWPFClient
             }
             catch (Exception exception)
             {
-                MessageBox.Show("(Change CarEntity) Fault! : " + exception.ToString());
+                MessageBox.Show("Change CarEntity Fault : " + exception.ToString());
             }
         }
 
@@ -219,13 +233,19 @@ namespace WCFWPFClient
             }
             catch (Exception exception)
             {
-                MessageBox.Show("(Logout) Fault! : " + exception.ToString());
+                MessageBox.Show("Logout Fault : " + exception.ToString());
             }
         }
 
         private void BTNRefresh_Click(object sender, RoutedEventArgs e)
         {
             Refresh();
+        }
+
+        private void BTNAdminPanel_Click(object sender, RoutedEventArgs e)
+        {
+            AdminWindow aw = new AdminWindow();
+            aw.Show();
         }
     }
 }
