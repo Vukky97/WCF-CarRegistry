@@ -41,9 +41,14 @@ namespace WCFService
             catch (Exception exception)
             {
                 Console.WriteLine(exception.GetType());
-                Console.WriteLine("(Login)Fault! : " + exception.Message);
+                Console.WriteLine("Login Fault : " + exception.Message);
                 return false;
             }
+        }
+
+        public bool IsAdmin(string adminName)
+        {
+            
         }
 
         public void Logout(string username)
@@ -55,7 +60,7 @@ namespace WCFService
             catch (Exception exception)
             {
                 Console.WriteLine(exception.GetType());
-                Console.WriteLine("(Logout)Fault! : " + exception.Message);
+                Console.WriteLine("Logout Fault : " + exception.Message);
             }
         }
 
@@ -100,6 +105,7 @@ namespace WCFService
 
                     cr.Brand = brand;
                     cr.Model = model;
+                    cr.ProductionYear = productionYear;
                     cr.Engine = engine;
                     cr.Transmission = transmission;
                     cr.Condition = condition;
@@ -248,6 +254,7 @@ namespace WCFService
                     {
                         cr.Brand = brand;
                         cr.Model = model;
+                        cr.ProductionYear = productionYear;
                         cr.Engine = engine;
                         cr.Transmission = transmission;
                         cr.Condition = condition;

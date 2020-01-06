@@ -11,9 +11,9 @@
         <Label Content="Username : " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="40" FontStyle="Italic" FontWeight="Bold" Margin="165,111,0,0"/>
         <Label Content="Password : " HorizontalAlignment="Left" Margin="174,204,0,0" VerticalAlignment="Top" FontSize="40" FontStyle="Italic" FontWeight="Bold"/>
         <TextBox x:Name="TBUserName" HorizontalAlignment="Left" Height="40" Margin="394,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="145"/>
-        <PasswordBox x:Name="PBPassword" HorizontalAlignment="Left" Margin="400,216,0,0" Height="40" Width="145" VerticalAlignment="Top"/>
-        <Button x:Name="BTNBack" Content="Back" HorizontalAlignment="Left" Margin="80,322,0,0" Height="40" Width="145" VerticalAlignment="Top" FontSize="30" FontStyle="Italic" FontWeight="Bold" Click="BTNBack_Click"/>
-        <Button x:Name="BTNLogin" Content="LogIn" HorizontalAlignment="Left" Margin="510,322,0,0" Height="40" Width="145" VerticalAlignment="Top" FontSize="30" FontStyle="Italic" FontWeight="Bold" Click="BTNLogin_Click"/>
+        <PasswordBox x:Name="PBPassword" HorizontalAlignment="Left" Margin="395,216,0,0" Height="40" Width="145" VerticalAlignment="Top"/>
+        <Button x:Name="BTNBack" Background="AliceBlue" Content="Back" HorizontalAlignment="Left" Margin="80,322,0,0" Height="50" Width="150" VerticalAlignment="Top" FontSize="30" FontStyle="Italic" FontWeight="Bold" Click="BTNBack_Click"/>
+        <Button x:Name="BTNLogin" Background="AliceBlue" Content="LogIn" HorizontalAlignment="Left" Margin="543,322,0,0" Height="50" Width="150" VerticalAlignment="Top" FontSize="30" FontStyle="Italic" FontWeight="Bold" Click="BTNLogin_Click"/>
 
 
     </Grid>

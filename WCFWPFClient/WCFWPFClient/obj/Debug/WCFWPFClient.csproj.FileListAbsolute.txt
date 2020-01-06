@@ -25,7 +25,6 @@ D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\
 D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\WCFWPFClient\obj\Debug\WCFWPFClient.csprojAssemblyReference.cache
 D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\WCFWPFClient\obj\Debug\CarRegistryWindow.g.cs
 D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\WCFWPFClient\obj\Debug\LoginWindow.g.cs
-D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\WCFWPFClient\obj\Debug\MainWindow.g.cs
 D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\WCFWPFClient\obj\Debug\RegisterWindow.g.cs
 D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\WCFWPFClient\obj\Debug\StartWindow.g.cs
 D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\WCFWPFClient\obj\Debug\App.g.cs
@@ -33,7 +32,6 @@ D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\
 D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\WCFWPFClient\obj\Debug\WCFWPFClient_MarkupCompile.lref
 D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\WCFWPFClient\obj\Debug\CarRegistryWindow.baml
 D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\WCFWPFClient\obj\Debug\LoginWindow.baml
-D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\WCFWPFClient\obj\Debug\MainWindow.baml
 D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\WCFWPFClient\obj\Debug\RegisterWindow.baml
 D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\WCFWPFClient\obj\Debug\StartWindow.baml
 D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\WCFWPFClient\obj\Debug\WCFWPFClient.g.resources

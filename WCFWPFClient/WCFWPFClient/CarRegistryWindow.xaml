@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="CarRegistryWindow" Height="700" Width="1200">
     <Grid >
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="281" Margin="10,378,0,0" VerticalAlignment="Top" Width="1172" Loaded="DataGrid_Loaded">
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="281" Margin="10,378,0,0" VerticalAlignment="Top" Width="925" Loaded="DataGrid_Loaded">
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="OrangeRed" />
-                    <Setter Property="Padding" Value="5"/>
+                    <Setter Property="Padding" Value="10"/>
                 </Style>
                 <Style BasedOn="{StaticResource {x:Type DataGridRowHeader}}" TargetType="{x:Type DataGridRowHeader}">
                     <Setter Property="Background" Value="OrangeRed" />

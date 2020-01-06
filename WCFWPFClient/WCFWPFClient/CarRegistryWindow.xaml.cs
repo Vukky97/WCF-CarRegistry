@@ -43,6 +43,7 @@ namespace WCFWPFClient
                 // Warning: bedore this that msc is refered like: LoginWindow.msc.GetCarList()
                 dataGrid.ItemsSource = msc.GetCarList().Select(carEntity => new
                 {
+                    Id = carEntity.Id,
                     Brand = carEntity.Brand,
                     Model = carEntity.Model,
                     ProductionYear = carEntity.ProductionYear,
@@ -67,7 +68,7 @@ namespace WCFWPFClient
             }
         }
 
-        //TODO: move to constructor?
+        //TODO: 
         // Id alapjan ad vissza egy rekodot
         // rendszamra atirni inkabb?
         private void BTNGet_Click(object sender, RoutedEventArgs e)
@@ -189,6 +190,7 @@ namespace WCFWPFClient
             {
                 msc.Update(int.Parse(TBID.Text), TBBrand.Text, TBModel.Text, int.Parse(TBProductionYear.Text), TBEngine.Text, TBTransmission.Text, TBCondition.Text,
                 int.Parse(TBDistanceTraveled.Text), int.Parse(TBPrice.Text), TBLicensePlateNumber.Text, TBLocation.Text, TBPhoneNumber.Text);
+
                 Refresh();
             }
             catch (FaultException<IncorrectDataFault>)
