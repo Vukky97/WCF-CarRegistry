@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="CarRegistryWindow" Height="700" Width="1200">
     <Grid >
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="281" Margin="10,378,0,0" VerticalAlignment="Top" Width="1172">
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="281" Margin="10,378,0,0" VerticalAlignment="Top" Width="1172" Loaded="DataGrid_Loaded">
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="OrangeRed" />
@@ -41,12 +41,15 @@
         <TextBox x:Name="TBLicensePlateNumber" HorizontalAlignment="Left" Height="28" Margin="567,192,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="18" />
         <TextBox x:Name="TBLocation" HorizontalAlignment="Left" Height="28" Margin="562,244,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="18" />
         <TextBox x:Name="TBPhoneNumber" HorizontalAlignment="Left" Height="28" Margin="562,293,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="18" />
-        <Button x:Name="BTNAdd" FontStyle="Italic" FontWeight="Bold" Background="OrangeRed" FontSize="18" Content="Add" HorizontalAlignment="Left" Margin="798,83,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="BTNReset" FontStyle="Italic" FontWeight="Bold" Background="OrangeRed" FontSize="18" Content="Reset" HorizontalAlignment="Left" Margin="798,125,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="BTNDelete" FontStyle="Italic" FontWeight="Bold" Background="OrangeRed" FontSize="18" Content="Delete" HorizontalAlignment="Left" Margin="798,164,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="BTNGet" FontStyle="Italic" FontWeight="Bold" Background="OrangeRed" FontSize="18" Content="Get" HorizontalAlignment="Left" Margin="798,216,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="BTNRefresh" FontStyle="Italic" FontWeight="Bold" Background="OrangeRed" FontSize="18" Content="Refresh" HorizontalAlignment="Left" Margin="798,253,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="BTNChange" FontStyle="Italic" FontWeight="Bold" Background="OrangeRed" FontSize="18" Content="Change" HorizontalAlignment="Left" Margin="798,297,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="BTNLogOut" FontStyle="Italic" FontWeight="Bold" Background="OrangeRed" FontSize="18" Content="LogOut" HorizontalAlignment="Left" Margin="1055,306,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="TBID" HorizontalAlignment="Left" Height="28" Margin="980,279,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="18" />
+        <Button x:Name="BTNAdd" FontStyle="Italic" FontWeight="Bold" Background="OrangeRed" FontSize="18" Content="Add" HorizontalAlignment="Left" Margin="798,83,0,0" VerticalAlignment="Top" Width="120" Click="BTNAdd_Click" />
+        <Button x:Name="BTNReset" FontStyle="Italic" FontWeight="Bold" Background="OrangeRed" FontSize="18" Content="Reset" HorizontalAlignment="Left" Margin="798,125,0,0" VerticalAlignment="Top" Width="120" Click="BTNReset_Click"/>
+        <Button x:Name="BTNDelete" FontStyle="Italic" FontWeight="Bold" Background="OrangeRed" FontSize="18" Content="Delete By ID" HorizontalAlignment="Left" Margin="798,258,0,0" VerticalAlignment="Top" Width="120" Click="BTNDelete_Click"/>
+        <Button x:Name="BTNGet" FontStyle="Italic" FontWeight="Bold" Background="OrangeRed" FontSize="18" Content="Get By ID" HorizontalAlignment="Left" Margin="798,297,0,0" VerticalAlignment="Top" Width="120" Click="BTNGet_Click"/>
+        <Button x:Name="BTNRefresh" FontStyle="Italic" FontWeight="Bold" Background="OrangeRed" FontSize="18" Content="Refresh" HorizontalAlignment="Left" Margin="798,171,0,0" VerticalAlignment="Top" Width="120" Click="BTNRefresh_Click" />
+        <Button x:Name="BTNChange" FontStyle="Italic" FontWeight="Bold" Background="OrangeRed" FontSize="18" Content="Change" HorizontalAlignment="Left" Margin="798,210,0,0" VerticalAlignment="Top" Width="120" Click="BTNChange_Click" />
+        <Button x:Name="BTNLogOut" FontStyle="Italic" FontWeight="Bold" Background="OrangeRed" FontSize="18" Content="LogOut" HorizontalAlignment="Left" Margin="1062,345,0,0" VerticalAlignment="Top" Width="120" Click="BTNLogOut_Click" />
+        <Label Content="ID TextBox: " FontSize="20" FontStyle="Italic" FontWeight="Bold" HorizontalAlignment="Left" Margin="980,235,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

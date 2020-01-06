@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Dell\source\repos\WCFWPFClient\WCFWPFClient\obj\Debug\
+D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\WCFWPFClient\obj\Debug\
 WCFWPFClient
 none
 false
 DEBUG;TRACE
-C:\Users\Dell\source\repos\WCFWPFClient\WCFWPFClient\App.xaml
-4653082689
+D:\TANN\7.FELEV\InteszkViszgaBeadando\ServiceOrintedProgrammingWCF\WCFWPFClient\WCFWPFClient\App.xaml
+5-343826190
 
-9-756534803
+10-312137050
 15833945659
-LoginWindow.xaml;MainWindow.xaml;RegisterWindow.xaml;StartWindow.xaml;
+CarRegistryWindow.xaml;LoginWindow.xaml;MainWindow.xaml;RegisterWindow.xaml;StartWindow.xaml;
 
 False
 

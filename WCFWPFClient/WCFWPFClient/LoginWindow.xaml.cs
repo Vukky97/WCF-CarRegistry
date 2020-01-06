@@ -23,9 +23,9 @@ namespace WCFWPFClient
             InitializeComponent();
         }
 
-        public static MyServiceClient msc = new MyServiceClient();
-        public static bool loggedIn = false;
-
+        private static MyServiceClient msc = new MyServiceClient();
+        private static bool loggedIn = false;
+        private string userName;
 
         private void BTNBack_Click(object sender, RoutedEventArgs e)
         {
@@ -43,11 +43,11 @@ namespace WCFWPFClient
                     if (msc.Login(TBUserName.Text, PBPassword.Password))
                     {
                         loggedIn = true;
-                        //GymMembersWindow gmw = new GymMembersWindow(tb_Username.Text);
-                        //gmw.Show();
+                        userName = TBUserName.Text;
+                        CarRegistryWindow crw = new CarRegistryWindow(userName);
+                        crw.Show();
                         this.Close();
                         MessageBox.Show("Successful login!");
-                        TBUserName.Text = "Succes";
                     }
                     else
                     {
